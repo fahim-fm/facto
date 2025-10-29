@@ -9,10 +9,7 @@ import u3 from "../assets/user3.jpg";
 import u4 from "../assets/user4.jpg";
 import secure from "../assets/secure-logo.png";
 
-
 const Dashboard = () => {
- 
-
   const us = [u1, u2, u3, u4];
 
   const barChartData = [
@@ -26,64 +23,46 @@ const Dashboard = () => {
   ];
 
   return (
-    <div>
-      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Sales Overview Card */}
-          <div className="bg-[#E0F0E5] py-10 px-4 sm:px-6 md:px-8 lg:px-10 rounded-lg border border-gray-200">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <img
-                src={sales}
-                alt="sales-icon"
-                className="w-5 sm:w-6 h-5 sm:h-6 mt-1"
-              />
+    <div className="flex justify-center py-6 bg-[#F9FAFB]">
+      {/* Container */}
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-[36px] w-full max-w-[1440px] justify-center">
+        {/* Card 1 */}
+        <div className="bg-[#E0F0E5] h-[665px] w-full sm:w-[500px] lg:w-[457px] py-10 px-6 rounded-lg border border-gray-200 flex justify-center">
+          <div className="w-full flex flex-col gap-6">
+            <h2 className="flex items-center gap-[24px] w-full font-[roboto] font-semibold text-[32px] leading-[40px] text-gray-800">
+              <img src={sales} alt="sales-icon" className="w-[40px] h-[40px]" />
               Sales overview from Previous Day
             </h2>
 
             {/* Sales Stats */}
-            <div className="mb-4 bg-white p-4 rounded-lg relative">
-              <div className="flex items-center mb-4">
-                <p className="text-gray-700 text-sm flex items-center gap-2 sm:text-base">
-                  <img
-                    src={total}
-                    alt="total sales icon"
-                    className="w-4 h-4"
-                  />
-                  <span className="text-gray-600 font-medium">
-                    Total sales :
-                  </span>
-                  <span className="font-bold text-lg sm:text-2xl text-gray-600">
-                    $12,500
-                  </span>
-                </p>
+            <div className="relative bg-white w-full h-[361px] rounded-[16px] p-[24px] shadow-sm border border-gray-200 mt-12">
+              <div className="flex items-center gap-[6px] absolute top-[32px] left-[32px]">
+                <img src={total} alt="total sales" className="w-[32px] h-[32px]" />
+                <span className="font-manrope font-medium text-[24px] leading-[36px] text-[#686868]">
+                  Total sales:
+                </span>
+                <span className="font-[roboto] font-bold text-[32px] leading-[40px] text-[#686868]">
+                  $12,500
+                </span>
               </div>
-              <br /> <br />
-              <div className="relative flex justify-between items-end h-36 sm:h-40">
+
+              {/* Bar Chart */}
+              <div className="absolute top-[137px] left-[32px] w-[334px] h-[179px] flex justify-between items-end gap-[8px]">
                 {barChartData.map(({ day, value, color }) => {
-                  const isHighest =
-                    value === Math.max(...barChartData.map((d) => d.value));
+                  const isHighest = value === Math.max(...barChartData.map((d) => d.value));
                   return (
-                    <div
-                      key={day}
-                      className="flex flex-col items-center justify-end relative w-6 sm:w-8"
-                    >
-                      {/* Highest Sale card */}
+                    <div key={day} className="flex flex-col items-center justify-end relative w-[28px]">
                       {isHighest && (
-                        <div className="absolute -top-14 sm:-top-16 w-18 sm:w-28 bg-[#F1F68E] shadow-md rounded-lg p-2 sm:p-3 text-xs sm:text-sm flex flex-col items-center justify-center text-gray-700 font-medium">
-                          <p className="text-gray-500 text-xs sm:text-sm">
-                            Highest sale
-                          </p>
-                          <p className="text-gray-700 font-bold text-sm sm:text-lg mt-1">
-                            $2,450
-                          </p>
+                        <div
+                          className="absolute bg-[#F1F68E] rounded-[12px] shadow-md flex flex-col items-center justify-center text-[#141414] font-[roboto] font-medium"
+                          style={{ width: "135px", height: "87px", top: "-70px", left: "-54px" }}
+                        >
+                          <p className="text-[14px] font-normal leading-[20px]">Highest sale</p>
+                          <p className="text-[20px] font-bold leading-[28px] mt-[4px]">$2,450</p>
                         </div>
                       )}
-                      {/* Bar */}
-                      <div
-                        className={`rounded-t-md ${color} w-full`}
-                        style={{ height: `${value}px` }}
-                      ></div>
-                      <span className="text-xs mt-1 text-gray-600">{day}</span>
+                      <div className={`rounded-t-[4px] ${color} w-full`} style={{ height: `${value}px` }}></div>
+                      <span className="text-[12px] mt-[6px] text-[#666]">{day}</span>
                     </div>
                   );
                 })}
@@ -91,140 +70,124 @@ const Dashboard = () => {
             </div>
 
             {/* Avg Sale */}
-            <div className="flex items-center bg-[#BFE5A6] rounded-3xl mt-4 p-2 sm:p-3">
-              <img src={as} alt="" className="w-4 sm:w-5" />
-              <p className="text-gray-700 text-sm sm:text-md font-semibold ml-2">
-                Avg. sale: $104.16 / per transaction
-              </p>
+            <div className="mt-[50px] flex items-center gap-[8px] w-full h-[64px] rounded-[24px] p-[16px_24px] bg-[#BFE5A6] opacity-100">
+              <div className="flex items-center w-full gap-[16px]">
+                <img src={as} alt="average sale icon" className="w-[24px] h-[24px]" />
+                <p className="w-full font-roboto font-normal text-[20px] leading-[32px] text-[#141414]">
+                  Avg. sale: $104.16 / per transaction
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Factoring Card */}
-          <div className="bg-[#DAFFC2] py-10 px-6 rounded-lg border border-gray-200 max-w-md mx-auto space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <img src={factoring} alt="factoring" className="w-6 h-6 mt-1" />
-              Factoring Possible Amount
+        {/* Card 2 */}
+        <div className="bg-[#DAFFC2] h-[665px] w-full sm:w-[500px] lg:w-[466px] py-10 px-6 rounded-lg border border-gray-200 flex flex-col justify-between">
+          <div>
+            <h2 className="flex items-center gap-[24px] w-full h-[77px] opacity-100">
+              <img src={factoring} alt="factoring" className="w-[48px] h-[48px]" />
+              <span className="w-full font-[roboto] font-semibold text-[32px] leading-[40px] text-[#141414]">
+                Factoring Possible Amount
+              </span>
             </h2>
 
-            <div className="bg-blue-50 w-40 py-3 rounded-xl shadow-lg flex flex-col items-center mx-auto">
-              <span className="font-medium text-gray-500 text-sm mb-2">
+            <div className="mt-[54px] flex flex-col items-center w-full max-w-[245px] h-[125px] p-[24px] gap-[16px] bg-white rounded-[25px] shadow-lg mx-auto">
+              <span className="w-full font-manrope font-normal text-[24px] leading-[36px] text-center text-[#686868] flex items-center justify-center">
                 Available Amount
               </span>
-              <span className="flex gap-2 text-2xl font-bold text-gray-700">
-                <p>$15,375</p>
-                <p className="text-sm self-center">USD</p>
-              </span>
+              <div className="flex flex-row justify-center items-center w-full gap-[24px]">
+                <span className="font-[roboto] font-semibold text-[32px] leading-[40px] text-[#141414] flex items-center justify-center">
+                  $15,375
+                </span>
+                <span className="font-[roboto] font-semibold text-[18px] leading-[30px] text-[#141414] flex items-center justify-center">
+                  USD
+                </span>
+              </div>
             </div>
 
-            <div className="bg-blue-50 p-6 rounded-lg shadow-lg">
-              <div className="mb-6">
-                <div className="flex justify-between items-center">
-                  <div className="flex text-xl text-gray-700 mb-2 font-semibold">
-                    <img src={dollar} alt="" className="w-6 h-6 mt-1 mr-2" />
-                    <p>Factored amount vs. remaining</p>
-                  </div>
+            {/* Factored Amount */}
+            <div className="mt-[36px] flex flex-col items-center w-full max-w-[400px] h-[281px] p-[24px] gap-[30px] bg-white rounded-[25px] shadow-lg mx-auto">
+              <div className="flex flex-row items-start gap-[16px] w-full">
+                <div className="relative w-[32px] h-[32px] rounded-full bg-[#E0F0E5] flex items-center justify-center">
+                  <img src={dollar} alt="dollar icon" className="w-[21.33px] h-[21.33px]" />
                 </div>
+                <p className="font-[roboto] font-medium text-[24px] leading-[32px] text-[#141414] flex items-center">
+                  Factored amount vs. remaining
+                </p>
+              </div>
 
-                <div className="flex flex-col gap-10 bg-[#E0F0E5] p-3 rounded-xl">
-                  <div className="flex justify-between items-center">
-                    <p className="text-gray-600 font-semibold">
-                      Factored Balance
-                    </p>
-                    <p className="text-gray-800 text-xl font-bold">
-                      $11,531.25
-                    </p>
-                  </div>
-                  <div className="relative h-4">
-                    <div className="h-4 bg-gray-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-green-900 rounded-full transition-all duration-500"
-                        style={{ width: "75%" }}
-                      ></div>
-                    </div>
-                    <div
-                      className="absolute -top-6 text-green-800 font-bold text-lg"
-                      style={{ left: "75%" }}
-                    >
-                      <span className="-translate-x-1/2 inline-block">75%</span>
-                    </div>
-                  </div>
+              <div className="flex flex-col items-start w-full max-w-[374px] h-[141px] p-[24px] gap-[64px] bg-[#E0F0E5] rounded-[24px]">
+                <div className="flex justify-between w-full">
+                  <p className="font-[roboto] font-semibold text-[20px] leading-[28px] text-[#686868]">
+                    Factored Balance
+                  </p>
+                  <p className="font-[roboto] font-bold text-[24px] leading-[34px] text-[#141414]">
+                    $11,531.25
+                  </p>
+                </div>
+                <div className="relative w-full max-w-[305px] h-[15px] bg-[#F2F2F2] rounded-[25px]">
+                  <div className="absolute left-0 top-0 h-[15px] bg-[#0F4E23] rounded-[25px]" style={{ width: "75%" }}></div>
+                  <span className="absolute top-[-26px] left-[206.5px] font-[roboto] font-semibold text-[18px] leading-[30px] text-[#141414]">
+                    75%
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Secure Card */}
-          <div className="bg-[#F1F68E] p-6 rounded-2xl shadow-lg max-w-sm mx-auto space-y-6">
-            <h2 className="flex text-2xl font-bold gap-2">
-              <img src={secure} alt="" className="w-6 h-6 mt-2" />
+        {/* Card 3 */}
+        <div className="bg-[#F1F68E] h-[665px] w-full sm:w-[500px] lg:w-[455px] p-6 rounded-2xl shadow-lg flex flex-col justify-between">
+          <h2 className="flex items-center gap-[24px] w-full h-[100px] opacity-100">
+            <img src={secure} alt="secure" className="w-[48px] h-[48px]" />
+            <span className="w-full font-[roboto] font-semibold text-[32px] leading-[40px] text-[#141414]">
               Secure & Streamlined Workflow
-            </h2>
+            </span>
+          </h2>
 
-            <div className="items-center space-x-3 bg-white p-3 rounded-xl shadow-sm -skew-y-8 skew-x-8 w-60 mx-auto">
-              <div className="flex justify-between items-center text-center">
-                <p className="text-gray-900 text-xl font-bold">Recent u</p>
-                <p className="text-sm text-gray-500">View All</p>
+          {/* Recent Users & Balances */}
+          <div className="flex flex-col gap-6">
+            {/* Recent Users Card */}
+            <div className="bg-white p-3 rounded-xl shadow-sm w-full sm:w-60 h-[125px] mx-auto flex flex-col justify-between -skew-y-8 skew-x-8">
+              <div className="flex justify-between items-center font-roboto">
+                <p className="text-gray-900 text-xl font-bold">Recent user</p>
+                <p className="text-gray-500 text-sm">View All</p>
               </div>
-
-              <div className="bg-green-50 px-4 rounded-xl flex justify-between items-center mt-4">
-                <div className="flex -space-x-4">
-                  {us.map((u, i) => (
-                    <div
-                      key={i}
-                      className="w-12 h-12 rounded-full border-2 border-white overflow-hidden"
-                    >
-                      <img
-                        src={u}
-                        alt={`u${i}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                  <div className="w-12 h-12 rounded-full bg-lime-100 border-2 border-white flex items-center justify-center text-black font-bold">
-                    9+
+              <div className="flex -space-x-4">
+                {us.map((u, i) => (
+                  <div key={i} className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
+                    <img src={u} alt={`u${i}`} className="w-full h-full object-cover" />
                   </div>
+                ))}
+                <div className="w-12 h-12 rounded-full bg-lime-100 border-2 border-white flex items-center justify-center text-black font-bold">
+                  9+
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col w-42 h-26 items-center bg-white p-3 rounded-xl shadow-sm">
-              <span className="text-gray-500 font-medium mb-1">
-                Total Balance
-              </span>
-              <div className="flex flex-col items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-800">
-                  $23,576
-                </span>
-                <button className="text-green-800 font-semibold text-sm hover:underline transition">
-                  <span className="bg-green-100 inline-block w-6 h-6 rounded-full">
-                    +
-                  </span>{" "}
-                  Add Number
-                </button>
-              </div>
+            {/* Total Balance */}
+            <div className="bg-white p-3 rounded-xl shadow-sm w-full sm:w-44 h-[167px] flex flex-col self-center xl:self-end gap-2">
+              <span className="text-gray-500 font-medium text-[18px] font-roboto">Total Balance</span>
+              <span className="text-2xl font-bold text-gray-800 font-roboto">$23,576</span>
+              <button className="text-green-800 font-semibold text-[18px] hover:underline transition">
+                <span className="bg-green-100 inline-block w-5 h-5 rounded-full font-manrope">+</span> Add Number
+              </button>
             </div>
 
-            <div className="flex justify-between items-center bg-white p-3 rounded-xl shadow-sm skew-y-6 -skew-x-6">
-              <div className="flex items-center space-x-3">
+            {/* Online User Card */}
+            <div className="bg-white p-3 rounded-xl shadow-sm w-full h-[80px] flex justify-between items-center mx-auto">
+              <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden">
-                  <img
-                    src={u3}
-                    alt="u3"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={u3} alt="u3" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-gray-800 font-medium">
-                  Online <br />{" "}
-                  <span className="text-gray-400 text-sm">
-                    Tommy Restaurent
-                  </span>
+                <span className="text-gray-800 font-bold text-[24px]">
+                  Online <br />
+                  <span className="text-gray-400 text-[16px] font-roboto">Tommy Restaurant</span>
                 </span>
               </div>
-              <div>
-                <p className="text-sm text-gray-700 font-bold text-center mb-1">
-                  +$10k
-                </p>
-                <button className="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium hover:bg-blue-800 transition">
+              <div className="flex flex-col items-center">
+                <p className="text-[20px] text-gray-700 font-bold mb-1">+$10k</p>
+                <button className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-[14px] font-medium hover:bg-blue-800 transition">
                   Confirm
                 </button>
               </div>
@@ -232,9 +195,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    
-      </div>
-   
+    </div>
   );
 };
 
