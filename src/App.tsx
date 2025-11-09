@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import Dashboard from './components/Dashboard';
+// import ContentSection from './components/ContentSection';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Dashboard/>
       <TrustedBy />
       {/* <Features /> */}
+      {/* <ContentSection/> */}
     </div>
   );
 }
