@@ -203,7 +203,7 @@ const Dashboard = () => {
               </div>
 
               {/* Total Balance */}
-              <div className="w-[195.61px] h-[163.95px] bg-white p-4 rounded-xl shadow-sm self-center lg:self-end max-w-xs w-full">
+              <div className="w-[195.61px] h-[163.95px] bg-white p-4 rounded-xl shadow-sm self-center lg:self-end max-w-xs ">
                 <p className="text-gray-500 font-roboto text-lg">
                   Total Balance
                 </p>
