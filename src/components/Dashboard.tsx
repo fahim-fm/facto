@@ -25,10 +25,10 @@ const Dashboard = () => {
   const highestValue = Math.max(...barChartData.map((d) => d.value));
 
   return (
-    <section className="w-full bg-[#F9FAFB] py-8 sm:py-12 lg:py-16">
+    <section className="  w-full bg-[#F9FAFB] ">
       {/* Max-width container – 1440px on XL */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 lg:gap-9 xl:gap-[36px]">
+      <div className=" max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
+        <div className="mt-[130px] grid grid-cols-1 lg:grid-cols-3 gap-9 lg:gap-9 xl:gap-[36px]">
           {/* ==================== Card 1: Sales Overview ==================== */}
           <div
             className="bg-[#E0F0E5] rounded-xl border border-gray-200 p-6 sm:p-8 lg:p-10 

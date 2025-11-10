@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Max-width container – exact 1440px on XL screens */}
       <div className="w-full max-w-[1440px]  mx-auto px-4 sm:px-6 lg:px-8 xl:px-0 text-center">
         {/* ---------- Badge ---------- */}
-        <div className=" w-[279px] h-[42px] inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-2 rounded-full bg-[#DFEDE3] mx-auto mb-8">
+        <div className=" w-[279px] h-[42px] inline-flex items-center justify-center gap-2 rounded-full bg-[#DFEDE3] mx-auto">
           <span className=" w-[231px] text-[#0F4E23] font-manrope font-medium text-[20px] leading-[26px] sm:text-[18px] lg:text-[20px]">
             Fast.secure.hassle-free
           </span>
@@ -40,7 +40,7 @@ export default function Hero() {
         </p>
 
         {/* ---------- CTA Button ---------- */}
-        <button className="mt-8 mb- sm:mb-[120px] lg:mb-[130px] 
+        <button className="mt-12 
                             min-w-[160px] w-[180px] sm:w-[192px] h-[54px] sm:h-[58px] 
                             bg-[#0F4E23] hover:bg-[#0c3a1b] text-white rounded-full 
                             flex items-center justify-center mx-auto transition-colors">

@@ -5,7 +5,6 @@ import logo from "../assets/Casa logo.png";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Freeze scroll when menu open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
@@ -16,9 +15,11 @@ export default function Header() {
   return (
     <header className="w-full bg-white relative z-50">
       {/* ---------- Main Navbar ---------- */}
-      <div className="mt-[40px] w-full max-w-[1440px] h-[58px] mx-auto flex items-center justify-between 
-                      gap-2 sm:gap-4 md:gap-6 lg:gap-10 xl:gap-[112px]
-                      px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0">
+      <div
+        className="mt-[40px] w-full max-w-[1440px] h-[58px] mx-auto flex items-center justify-between 
+                   gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-[112px]
+                   px-4 sm:px-6 md:px-8  xl:px-0"
+      >
         {/* ---------- Left: Logo + Hamburger ---------- */}
         <div className="flex items-center gap-4 flex-shrink-0">
           {/* Hamburger (visible < lg) */}
@@ -35,12 +36,18 @@ export default function Header() {
             src={logo}
             alt="Casa logo"
             className="h-[56.37px] w-auto object-contain flex-shrink-0
-                       sm:w-[110px] md:w-[130px] lg:w-[121px] xl:w-[151px]"
+                       sm:w-[110px] md:w-[130px] lg:w-[120px] xl:w-[151px]"
           />
         </div>
 
         {/* ---------- Nav Links (Desktop only) ---------- */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-[48px] font-roboto text-[18px] leading-[30px] text-[#141414]">
+        <nav
+          className="hidden lg:flex items-center 
+                     gap-[28px] xl:gap-[48px] 
+                     font-roboto text-[17px] xl:text-[18px] 
+                     leading-[28px] xl:leading-[30px] 
+                     text-[#141414]"
+        >
           {[
             { label: "Services", w: "w-[73px]" },
             { label: "How it works", w: "w-[114px]" },
@@ -60,17 +67,28 @@ export default function Header() {
         </nav>
 
         {/* ---------- CTA Buttons (Desktop only) ---------- */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+        <div
+          className="hidden lg:flex items-center 
+                     gap-3 xl:gap-6 flex-shrink-0"
+        >
           {/* Sign In */}
-          <button className="h-[58px] min-w-[145px] bg-[#DFEDE3] rounded-full flex items-center justify-center px-6 py-4">
-            <span className=" w-[65px] font-manrope font-semibold text-[20px] leading-[26px] text-[#0F4E23]">
+          <button
+            className="h-[54px] xl:h-[58px] 
+                       min-w-[130px] xl:min-w-[145px] 
+                       bg-[#DFEDE3] rounded-full flex items-center justify-center px-5 xl:px-6 py-4"
+          >
+            <span className="font-manrope font-semibold text-[18px] xl:text-[20px] leading-[26px] text-[#0F4E23]">
               Sign In
             </span>
           </button>
 
           {/* Sign Up */}
-          <button className="h-[58px] min-w-[154px] bg-[#000000] text-white rounded-full flex items-center justify-center px-6 py-4">
-            <span className=" w-[74px] font-manrope font-semibold text-[20px] leading-[26px]">
+          <button
+            className="h-[54px] xl:h-[58px] 
+                       min-w-[140px] xl:min-w-[154px] 
+                       bg-[#000000] text-white rounded-full flex items-center justify-center px-5 xl:px-6 py-4"
+          >
+            <span className="font-manrope font-semibold text-[18px] xl:text-[20px] leading-[26px]">
               Sign Up
             </span>
           </button>
@@ -83,17 +101,21 @@ export default function Header() {
           id="menu-overlay"
           className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex"
           onClick={(e) => {
-            if ((e.target as HTMLElement).id === "menu-overlay") setIsOpen(false);
+            if ((e.target as HTMLElement).id === "menu-overlay")
+              setIsOpen(false);
           }}
         >
-          {/* Slide-in panel */}
           <div
             className="bg-white w-[280px] sm:w-[320px] h-full p-6 flex flex-col justify-between shadow-xl animate-slideInLeft"
             style={{ animation: "slideInLeft 0.3s ease-out" }}
           >
             {/* Top: Logo + Close */}
             <div className="flex items-center justify-between mb-8">
-              <img src={logo} alt="Logo" className="w-[110px] h-[45px] object-contain" />
+              <img
+                src={logo}
+                alt="Logo"
+                className="w-[110px] h-[45px] object-contain"
+              />
               <button onClick={() => setIsOpen(false)} aria-label="Close menu">
                 <X className="w-6 h-6 text-black" />
               </button>
@@ -101,18 +123,23 @@ export default function Header() {
 
             {/* Nav Links */}
             <nav className="flex flex-col items-start space-y-6 font-roboto text-[18px] leading-[30px] text-[#141414]">
-              {["Services", "How it works", "Why is different", "Reviews", "Pricing", "Contact"].map(
-                (link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="hover:text-gray-700 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link}
-                  </a>
-                )
-              )}
+              {[
+                "Services",
+                "How it works",
+                "Why is different",
+                "Reviews",
+                "Pricing",
+                "Contact",
+              ].map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="hover:text-gray-700 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link}
+                </a>
+              ))}
             </nav>
 
             {/* Buttons */}

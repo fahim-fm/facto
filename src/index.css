@@ -34,3 +34,6 @@
 .animate-slideInLeft {
   animation: slideInLeft 0.3s ease-out forwards; 
 }
+.btn {
+  @apply bg-[#0f4e23] text-white font-manrope font-semibold text-[20px] leading-[26px] px-10 py-4 rounded-full w-[192px] h-[58px] flex items-center justify-center gap-2;
+}
