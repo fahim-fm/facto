@@ -1,9 +1,9 @@
-
+import React from "react";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 
-const ContentSection = () => {
+const ContentSection: React.FC = () => {
   return (
     <section className="bg-white mt-[80px] sm:mt-[120px] lg:mt-[140px] xl:mt-[160px] mb-[120px] lg:mb-[140px] xl:mb-[160px]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-8 font-roboto">
@@ -12,11 +12,13 @@ const ContentSection = () => {
           {/* ---------- Left Content ---------- */}
           <div className="text-left w-full lg:w-[780px] xl:w-[880px]">
             <div className="rounded-lg p-0 lg:p-4 xl:p-6 inline-block">
-              <span className="inline-block w-auto h-auto font-manrope bg-[#E5F7E5] text-[#1A4D16]
+              <span
+                className="inline-block w-auto h-auto font-manrope bg-[#E5F7E5] text-[#1A4D16]
                                text-[14px] sm:text-[16px] lg:text-[18px] xl:text-[20px]
                                px-[18px] sm:px-[20px] lg:px-[22px] xl:px-[24px]
                                py-[6px] sm:py-[7px] lg:py-[7px] xl:py-[8px]
-                               font-semibold rounded-full mb-[20px] sm:mb-[22px] lg:mb-[28px] xl:mb-[32px]">
+                               font-semibold rounded-full mb-[20px] sm:mb-[22px] lg:mb-[28px] xl:mb-[32px]"
+              >
                 About Casa Service
               </span>
 
@@ -50,17 +52,23 @@ const ContentSection = () => {
         </div>
 
         {/* ---------- Cards Section ---------- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
-                        gap-[24px] sm:gap-[28px] lg:gap-[30px] xl:gap-[36px]">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+                        gap-[24px] sm:gap-[28px] lg:gap-[30px] xl:gap-[36px]"
+        >
           {/* ---------- Card 1 ---------- */}
-          <div className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
+          <div
+            className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
                           w-full lg:w-[420px] xl:w-[456px]
                           p-[32px] sm:p-[38px] lg:p-[42px] xl:p-[48px]
                           flex flex-col justify-start
-                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto">
-            <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
+                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto"
+          >
+            <h3
+              className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
                            font-bold text-gray-800 mb-[20px] sm:mb-[22px] lg:mb-[22px] xl:mb-[24px]
-                           group-hover:text-white font-roboto">
+                           group-hover:text-white font-roboto"
+            >
               Secure and Instant Cash Advances
             </h3>
             <div className="mb-[20px] sm:mb-[22px] lg:mb-[24px] xl:mb-6">
@@ -71,23 +79,29 @@ const ContentSection = () => {
                            mb-[20px] sm:mb-[22px] lg:mb-[24px] xl:mb-6"
               />
             </div>
-            <p className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
+            <p
+              className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
                           text-gray-600 leading-[22px] sm:leading-[24px] lg:leading-[26px] xl:leading-relaxed
-                          group-hover:text-white font-manrope">
+                          group-hover:text-white font-manrope"
+            >
               No more waiting weeks—convert daily credit card transactions into
               cash within 24 hours to keep your business running smoothly.
             </p>
           </div>
 
           {/* ---------- Card 2 ---------- */}
-          <div className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
+          <div
+            className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
                           w-full lg:w-[420px] xl:w-[456px]
                           p-[32px] sm:p-[38px] lg:p-[42px] xl:p-[48px]
                           flex flex-col justify-start
-                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto">
-            <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
+                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto"
+          >
+            <h3
+              className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
                            font-bold text-gray-800 mb-[20px] sm:mb-[22px] lg:mb-[22px] xl:mb-[24px]
-                           group-hover:text-white font-roboto">
+                           group-hover:text-white font-roboto"
+            >
               Transparent and Fair Pricing Process
             </h3>
             <div className="mb-[20px] sm:mb-[22px] lg:mb-[24px] xl:mb-6">
@@ -98,23 +112,29 @@ const ContentSection = () => {
                            mb-[20px] sm:mb-[22px] lg:mb-[24px] xl:mb-6"
               />
             </div>
-            <p className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
+            <p
+              className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
                           text-gray-600 leading-[22px] sm:leading-[24px] lg:leading-[26px] xl:leading-relaxed
-                          group-hover:text-white font-manrope">
+                          group-hover:text-white font-manrope"
+            >
               No Hidden Fees. No Surprises! Enjoy clear, upfront pricing with
               flexible funding options, so you always know what to expect.
             </p>
           </div>
 
           {/* ---------- Card 3 ---------- */}
-          <div className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
+          <div
+            className="bg-[#f8f8f8] rounded-[20px] sm:rounded-[22px] lg:rounded-[23px] xl:rounded-[25px]
                           w-full lg:w-[420px] xl:w-[456px]
                           p-[32px] sm:p-[38px] lg:p-[42px] xl:p-[48px]
                           flex flex-col justify-start
-                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto">
-            <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
+                          transition-all duration-300 hover:bg-[#0F3E1E] hover:text-white group mx-auto"
+          >
+            <h3
+              className="text-[18px] sm:text-[20px] lg:text-[22px] xl:text-2xl
                            font-bold text-gray-800 mb-[20px] sm:mb-[22px] lg:mb-[22px] xl:mb-[24px]
-                           group-hover:text-white font-roboto">
+                           group-hover:text-white font-roboto"
+            >
               Flexible and Secure
               <br />
               Payout Options
@@ -127,9 +147,11 @@ const ContentSection = () => {
                            mb-[20px] sm:mb-[22px] lg:mb-[24px] xl:mb-6"
               />
             </div>
-            <p className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
+            <p
+              className="text-[14px] sm:text-[15px] lg:text-[15.5px] xl:text-base 
                           text-gray-600 leading-[22px] sm:leading-[24px] lg:leading-[26px] xl:leading-relaxed
-                          group-hover:text-white font-manrope">
+                          group-hover:text-white font-manrope"
+            >
               We offer flexible and easy payout options tailored to your needs,
               ensuring quick access to your funds. Choose from multiple payment
               methods.
